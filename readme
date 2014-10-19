@@ -1,0 +1,20 @@
+============================
+下载源码之后，部署到myeclipse中，自行配置对应的数据库连接信息，然后运行init目录下的exportDB文件。
+============================
+
+struts 整合spring
+struts2-spring-plugin-2.3.4.jar
+commons-logging-1.1.1.jar
+
+整合hibernate
+使用IoC AOP
+aopalliance-1.0.jar
+
+aspectjrt.jar
+aspectjtools.jar
+aspectjweaver.jar
+org.aspectj.matcher.jar
+
+不使用接口的情况下使用AOP需要再导入这两个包
+calib2.jar
+asm-3.3.jar

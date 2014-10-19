@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/context  
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <!-- 将自动开启“注解实现Bean依赖注入”支持 -->
+	<context:component-scan base-package="com"/>  
+    
+	<bean name="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+	<!--  
+	<bean name="studentDao" class="com.daoImpl.StudentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean name="logDao" class="com.daoImpl.LogDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean name="studentMgr" class="com.managerImpl.StudentManagerImpl">
+		<property name="studentDao" ref="studentDao"></property>
+		<property name="logDao" ref="logDao"></property>
+	</bean>
+	<bean name="studentAction" class="com.action.StudentAction" scope="prototype">
+		<property name="studentMgr" ref="studentMgr"></property>
+	</bean>
+	-->
+	
+	<!-- 事物管理器 -->
+	<bean name="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="autodetectDataSource" value="false"></property>
+	</bean>
+	
+	<!-- 事物的传播特性 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 事物管理使用的地方 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* com.mxy.service.*.*(..))" id="allManagerMethod"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="allManagerMethod"/>
+	</aop:config>
+</beans>

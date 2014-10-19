@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <!-- 可以不用配置 因为在Struts-spring插件中已经配置了 -->
+    <constant name="struts.objectFactory" value="spring"/>
+    <!-- 装载机制 -->
+    <constant name="struts.objectFactory.spring.autoWire" value="name"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+    	<!-- 用于生成验证码 -->
+    	<action name="rand" class="com.mxy.action.RandomPictureAction">  
+            <result type="stream">  
+                <param name="contentType">image/jpeg</param>  
+                <param name="inputName">inputStream</param>  
+            </result>  
+        </action>
+        
+        <action name="myClass_*" class="com.mxy.action.MyClassAction" method="{1}">
+			<result name="create">class.jsp</result>
+			<result name="myClass">class.jsp</result>
+			<result name="join">class.jsp</result>
+			<result name="login">home.jsp</result>
+			<result name="modify">home.jsp</result>
+			<result name="kickout" type="chain">myClass_myClass</result>
+		</action>
+        
+		<action name="*" class="com.mxy.action.UserAction" method="{1}">
+			<result name="register">home.jsp</result>
+			<result name="login">home.jsp</result>
+			<result name="modify">home.jsp</result>
+			<result name="userInfo">user.jsp</result>
+		</action>
+		
+        
+    </package>
+    <!-- 返回json数据包 一个类只完成一个功能调用只要调用类名就可以了 -->
+    <package name="json" namespace="/json" extends="json-default">
+		<action name="*" class="com.mxy.action.json.{1}">
+			<result name="success" type="json"></result>
+		</action>
+    </package>
+
+   
+
+</struts>

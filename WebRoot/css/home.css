@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+.home_container {
+	width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.nav_blank {
+	width: 940px;
+	height: 30px;
+}
+.user_info {
+	height: 350px;
+	width: 938px;
+	background: #EAF5F9;
+	border: 1px solid #DDD;
+}
+.radiu {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.title {
+	width: 100%;
+	height: 30px;
+	padding: 10px;
+}
+.title span {
+	margin-left: 20px;
+	font-family: Microsoft YaHei, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+.title hr {
+	display: block;
+	clear: both;
+	color: #6FF;
+	width: 920px;
+	float: left;
+}
+.btnbox {
+	height: 55px;/*这里修改后 .btnbox span的line-height也得修改*/
+	width: 260px;
+	background-color: #86E0E0;
+	margin-top: 15px;
+	margin-left: 140px;
+	float: left;
+}
+.btnbox span {
+	text-align: center;
+	display: block;
+	line-height: 55px;/*用于让文字上下居中对齐*/
+	font-family: Microsoft YaHei, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+}
+.user_info a:hover {
+	text-decoration: none;
+	color: #F00;
+}
+.u {
+	clear: both;
+	width: 400px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 18px;
+}
+.u_l {
+	float: left;
+	width: 100px;
+	text-align: right;
+}
+.u_r {
+	width: 360px;
+}
+

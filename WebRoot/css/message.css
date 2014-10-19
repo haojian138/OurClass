@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document */
+.m_main{
+	display:block;
+	width:100%;
+	height:500px;
+	border:1px solid #CCC;
+	}
+.m_left{
+	width:240px;
+	height:100%;
+	float:left;
+	border-right:1px solid #CCC;
+	background-color:#EAF5F9;
+	}
+.m_l_bgc{
+	background-color:#FFF;
+	border-right:1px solid #FFF;
+	}
+.m_right{
+	display:block;
+	padding:0;
+	width:659px;
+	height:100%;
+	float:right;
+	}
+.m_l_nav,.m_r_nav{
+	width:100%;
+	height:40px;
+	border-bottom:1px dashed #CCC;
+	}
+.m_l_nav span{
+	display:block;
+	margin-left:30px;
+	line-height:40px;
+	font-size:20px;
+	font-weight:bold;
+	}
+.m_sort{
+	display:block;
+	width:100%;
+	height:50px;
+	border-bottom:1px solid #CCC;
+	cursor:pointer;
+	}
+.m_sort span{
+	display:block;
+	margin-left:30px;
+	font-size:16px;
+	line-height:50px;
+	}
+.m_r_main{
+	margin-left:-20px;
+	margin-top:10px;
+	width:100%;
+	height:100%;
+	float:left;
+	}
+.m_detail{
+	line-height:40px;
+	display:block;
+	height:40px;
+	vertical-align:
+	margin-left:10px;
+	border-bottom:1px dashed #CCCCCC;
+	cursor:pointer;
+	}
+.m_detail_l{
+	display:block;
+	float:left;
+	width:450px;
+	}
+.m_detail_r{
+	display:block;
+	float:left;
+	width:170px;
+	}
+.dialog{
+	position:relative;
+	display: block;
+	width: 100%;
+	margin: 0 0;
+	margin-top: -582px;
+	background-color: #999;
+	/*
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	*/
+	filter: alpha(Opacity=80);
+	-moz-opacity: 0.5;
+	opacity: 0.5
+	}
+.message{
+	position:absolute;
+	top:150px;
+	width:500px;
+	display:block;
+	border:1px solid #666;
+	background-color:#FFF;
+	
+	}
+.message_nav{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid #CCC;
+	}
+.m_nav_title{
+	float:left;
+	width:300px;
+	margin-left:20px;
+	}
+.m_nav_close{
+	float:right;
+	margin-right:20px;
+	cursor:pointer;
+	}
+.message_con{
+	margin-left:20px;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding-bottom:20px;
+	}
+.m_bottom{
+	width:100px;
+	height:30px;
+	background-color:#CCC;
+	border:1px solid #999;
+	text-align:center;
+	line-height:30px;
+	cursor:pointer;
+	float:right;
+	margin-right:20px;
+	margin-bottom:25px;
+	}

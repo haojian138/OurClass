@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #EAF5F9;
+	font-family: Microsoft YaHei, Verdana, Helvetica, Arial, sans-serif;
+}
+.nav {
+	display: block;
+	width: 100%;
+	height: 70px;
+	background: url(../images/i_bgnav.png);
+}
+.nav_c {
+	width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.main {
+	display: block;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 940px;
+	height: 500px;
+	background-color: #DCF2FA;
+}
+.m_l_c {
+	margin-left: 80px;
+	height: 60px;
+	line-height: 60px;
+}
+.m_l_c label {
+	float: left;
+	margin-right: 15px;
+	font-size: 20px;
+	width: 100px;
+	text-align: center;
+}
+.m_l_c input{
+transition: all 0.30s ease-in-out;
+-webkit-transition: all 0.30s ease-in-out;
+-moz-transition: all 0.30s ease-in-out;
+border: #35a5e5 1px solid;
+border-radius: 4px;
+outline: none;
+}
+.m_l_c input:focus {
+box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+-webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+-moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+.m_l_c input[type=text]{
+	float: left;
+	width: 250px;
+	height: 30px;
+	margin-top: 12px;
+	margin-right: 20px;
+}
+.m_l_c input[type=password]{
+	float: left;
+	width: 250px;
+	height: 30px;
+	margin-top: 12px;
+	margin-right: 20px;
+}
+.m_l_c_tip {
+	margin-left: 20px;
+}
+.btn {
+	margin-left: 115px;
+	width: 250px;
+	height: 60px;
+	background-color: #F5C5C5;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size:24px;
+	font-weight:bold;
+	color:#FFF;
+	text-align:center;
+}
